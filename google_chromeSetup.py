@@ -1,6 +1,7 @@
 import undetected_chromedriver as uc
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+import os
 
 import ImportantVariables as imp_val
 
@@ -20,7 +21,7 @@ def setup_google_chrome_driver(profile_directory="Default", headless=False):
         "download.default_directory": download_dir,
         "download.prompt_for_download": False,
         "download.directory_upgrade": True,
-        "safebrowsing.enabled": True
+        "safeBrowse.enabled": True
     }
     chrome_options.add_experimental_option("prefs", prefs)
 
@@ -34,30 +35,38 @@ def setup_google_chrome_driver(profile_directory="Default", headless=False):
     if chrome_executable_path:
         chrome_options.binary_location = chrome_executable_path
 
-    # ✅ Headless mode
+    # ✅ Headless mode and necessary arguments for CI/CD environments
     if headless:
         chrome_options.add_argument("--headless=new")
         chrome_options.add_argument("--disable-gpu")
         chrome_options.add_argument("--window-size=1920,1080")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        # Important for connecting in headless environments
+        chrome_options.add_argument("--remote-debugging-port=0")
+        chrome_options.add_argument("--allow-running-insecure-content")
+        chrome_options.add_argument("--disable-web-security")
+        chrome_options.add_argument("--disable-features=IsolateOrigins,site-per-process")
+
 
     # ✅ Common anti-detection options
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--disable-blink-features=AutomationControlled")
     chrome_options.add_argument("--disable-infobars")
 
-    # ✅ Launch driver (you can pin version like version_main=136)
+    # Determine driver executable path
+    driver_exec_path = None
+    if chrome_driver_path:
+        driver_exec_path = chrome_driver_path
+    else:
+        # Use webdriver_manager to install if path not provided
+        driver_exec_path = ChromeDriverManager().install()
+        print("ChromeDriverManager installed driver at:", driver_exec_path)
+
+    # ✅ Launch driver
     try:
         driver = uc.Chrome(
-            # version_main=136,  # or None for auto-detect
             options=chrome_options,
-            driver_executable_path=chrome_driver_path if chrome_driver_path else None
-        )
-        print("this is ChromeDriverManager().install()", ChromeDriverManager().install())
-        driver = uc.Chrome(
-            service=Service(ChromeDriverManager().install()),
-            # version_main=136,  # or None for auto-detect
-            options=chrome_options
+            driver_executable_path=driver_exec_path
         )
     except Exception as e:
         print("❌ Error initializing undetected_chromedriver:", e)
@@ -67,8 +76,9 @@ def setup_google_chrome_driver(profile_directory="Default", headless=False):
 
 
 if __name__ == "__main__":
+    # Example usage:
+    # driver = setup_google_chrome_driver(headless=True) # Run in headless mode
     driver = setup_google_chrome_driver()
     driver.get("https://www.google.com")
-    print("✅ Driver initialized successfully.")
-    input("Press Enter to close...")
+    print(driver.title)
     driver.quit()

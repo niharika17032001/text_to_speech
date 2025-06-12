@@ -1,28 +1,46 @@
-name: My Workflow
+name: Run Python Script with Venv
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  my_job:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: '3.10' # Specify your Python version
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Create and Cache Venv
+        id: cache-venv
+        uses: actions/cache@v4
+        with:
+          path: .venv # Path to your virtual environment directory
+          key: ${{ runner.os }}-venv-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-venv-
 
-      - name: Run Python script with API Keys
+      - name: Install dependencies into Venv
         run: |
-          python text_to_audio.py
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install -r requirements.txt
+        # Only run this step if the cache was missed (venv not restored)
+        # This condition ensures dependencies are only installed if the venv isn't already cached.
+        if: steps.cache-venv.outputs.cache-hit != 'true'
 
+      - name: Activate Venv and Run script
+        run: |
+          source .venv/bin/activate
+          python text_to_audio.py
+          
+          
+          
           chmod 777  /home/runner/work/text_to_speech/text_to_speech/voices/
 
       - name: Set output
