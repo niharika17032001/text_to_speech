@@ -1,0 +1,197 @@
+[
+    {
+        "index": 1,
+        "value": "en-AU-NatashaNeural",
+        "select_by_visible_text": "Natasha English (Australia)"
+    },
+    {
+        "index": 2,
+        "value": "en-AU-WilliamNeural",
+        "select_by_visible_text": "William English (Australia)"
+    },
+    {
+        "index": 3,
+        "value": "en-CA-ClaraNeural",
+        "select_by_visible_text": "Clara English (Canada)"
+    },
+    {
+        "index": 4,
+        "value": "en-CA-LiamNeural",
+        "select_by_visible_text": "Liam English (Canada)"
+    },
+    {
+        "index": 5,
+        "value": "en-GB-LibbyNeural",
+        "select_by_visible_text": "Libby English (UK)"
+    },
+    {
+        "index": 6,
+        "value": "en-GB-MaisieNeural",
+        "select_by_visible_text": "Maisie English (UK)"
+    },
+    {
+        "index": 7,
+        "value": "en-GB-RyanNeural",
+        "select_by_visible_text": "Ryan English (UK)"
+    },
+    {
+        "index": 8,
+        "value": "en-GB-SoniaNeural",
+        "select_by_visible_text": "Sonia English (UK)"
+    },
+    {
+        "index": 9,
+        "value": "en-GB-ThomasNeural",
+        "select_by_visible_text": "Thomas English (UK)"
+    },
+    {
+        "index": 10,
+        "value": "en-HK-SamNeural",
+        "select_by_visible_text": "Sam English (Hong Kong)"
+    },
+    {
+        "index": 11,
+        "value": "en-HK-YanNeural",
+        "select_by_visible_text": "Yan English (Hong Kong)"
+    },
+    {
+        "index": 12,
+        "value": "en-IE-ConnorNeural",
+        "select_by_visible_text": "Connor English (Ireland)"
+    },
+    {
+        "index": 13,
+        "value": "en-IE-EmilyNeural",
+        "select_by_visible_text": "Emily English (Ireland)"
+    },
+    {
+        "index": 14,
+        "value": "en-IN-NeerjaExpressiveNeural",
+        "select_by_visible_text": "Neerja English Expressive (India)"
+    },
+    {
+        "index": 15,
+        "value": "en-IN-NeerjaNeural",
+        "select_by_visible_text": "Neerja English (India)"
+    },
+    {
+        "index": 16,
+        "value": "en-IN-PrabhatNeural",
+        "select_by_visible_text": "Prabhat English (India)"
+    },
+    {
+        "index": 17,
+        "value": "en-KE-AsiliaNeural",
+        "select_by_visible_text": "Asilia English (Kenya)"
+    },
+    {
+        "index": 18,
+        "value": "en-KE-ChilembaNeural",
+        "select_by_visible_text": "Chilemba English (Kenya)"
+    },
+    {
+        "index": 19,
+        "value": "en-NG-AbeoNeural",
+        "select_by_visible_text": "Abeo English (Nigeria)"
+    },
+    {
+        "index": 20,
+        "value": "en-NG-EzinneNeural",
+        "select_by_visible_text": "Ezinne English (Nigeria)"
+    },
+    {
+        "index": 21,
+        "value": "en-NZ-MitchellNeural",
+        "select_by_visible_text": "Mitchell English (New Zealand)"
+    },
+    {
+        "index": 22,
+        "value": "en-NZ-MollyNeural",
+        "select_by_visible_text": "Molly English (New Zealand)"
+    },
+    {
+        "index": 23,
+        "value": "en-PH-JamesNeural",
+        "select_by_visible_text": "James English (Philippines)"
+    },
+    {
+        "index": 24,
+        "value": "en-PH-RosaNeural",
+        "select_by_visible_text": "Rosa English (Philippines)"
+    },
+    {
+        "index": 25,
+        "value": "en-SG-LunaNeural",
+        "select_by_visible_text": "Luna English (Singapore)"
+    },
+    {
+        "index": 26,
+        "value": "en-SG-WayneNeural",
+        "select_by_visible_text": "Wayne English (Singapore)"
+    },
+    {
+        "index": 27,
+        "value": "en-TZ-ElimuNeural",
+        "select_by_visible_text": "Elimu English (Tanzania)"
+    },
+    {
+        "index": 28,
+        "value": "en-TZ-ImaniNeural",
+        "select_by_visible_text": "Imani English (Tanzania)"
+    },
+    {
+        "index": 29,
+        "value": "en-US-AnaNeural",
+        "select_by_visible_text": "Ana English (US)"
+    },
+    {
+        "index": 30,
+        "value": "en-US-AriaNeural",
+        "select_by_visible_text": "Aria English (US)"
+    },
+    {
+        "index": 31,
+        "value": "en-US-ChristopherNeural",
+        "select_by_visible_text": "Christopher English (US)"
+    },
+    {
+        "index": 32,
+        "value": "en-US-EricNeural",
+        "select_by_visible_text": "Eric English (US)"
+    },
+    {
+        "index": 33,
+        "value": "en-US-GuyNeural",
+        "select_by_visible_text": "Guy English (US)"
+    },
+    {
+        "index": 34,
+        "value": "en-US-JennyNeural",
+        "select_by_visible_text": "Jenny English (US)"
+    },
+    {
+        "index": 35,
+        "value": "en-US-MichelleNeural",
+        "select_by_visible_text": "Michelle English (US)"
+    },
+    {
+        "index": 36,
+        "value": "en-US-RogerNeural",
+        "select_by_visible_text": "Roger English (US)"
+    },
+    {
+        "index": 37,
+        "value": "en-US-SteffanNeural",
+        "select_by_visible_text": "Steffan English (US)"
+    },
+    {
+        "index": 38,
+        "value": "en-ZA-LeahNeural",
+        "select_by_visible_text": "Leah English (South Africa)"
+    },
+    {
+        "index": 39,
+        "value": "en-ZA-LukeNeural",
+        "select_by_visible_text": "Luke English (South Africa)"
+    }
+]
