@@ -21,9 +21,9 @@ jobs:
 
       - name: Run Python script with API Keys
         run: |
-          python youtube_video_download_and_upload_to_drive.py
-#
-#          chmod 777  /home/runner/work/youtube_vedio_editor_action/youtube_vedio_editor_action/downloaded_videos/
+          python text_to_audio.py
+
+          chmod 777  /home/runner/work/text_to_speech/text_to_speech/voices/
 
       - name: Set output
         if: always()
