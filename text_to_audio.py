@@ -139,7 +139,7 @@ def split_text(text, max_length=1200):
 def text_to_audio_in_chunks(full_text, base_path="voices", voice="Neerja English (India)"):
     os.makedirs(base_path, exist_ok=True)
     chunks = split_text(full_text)
-    driver = setup_google_chrome_driver()  # Start once
+    driver = setup_google_chrome_driver(headless=True)  # Start once
     for i, chunk in enumerate(chunks):
         filename = os.path.join(base_path, f"audio_chunk_{i + 1}.wav")
         print(f"\nProcessing chunk {i + 1}/{len(chunks)}...")
